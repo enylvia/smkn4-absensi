@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('guru.listguru');
 });
+Auth::routes();
 
 Route::get('/listsiswa',[SiswaController::class,'index'])->name('listsiswa');
 Route::get('/overview/attendance',[AttendanceController::class,'overview'])->name('overview');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');

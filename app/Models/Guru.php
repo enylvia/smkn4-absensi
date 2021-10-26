@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guru extends Model
 {
-    use HasFactory;
+    public function Mapel() {
+        return $this->belongsToMany(Mapel::class,'guru_mapel');
+    }
 }

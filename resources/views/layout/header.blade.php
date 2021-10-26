@@ -27,7 +27,7 @@
               >
                 <div class="profile-info">
                   <div class="info">
-                    <h6>John Doe</h6>
+                    <h6>{{Auth::user()->name}}</h6>
                     <div class="image">
                       <img
                         src="{{asset("assets/images/profile/profile-image.png")}}"
@@ -47,7 +47,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                  <a href="{{route('logout')}}"> <i class="lni lni-exit"></i> Sign Out </a>
                 </li>
               </ul>
             </div>

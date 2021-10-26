@@ -61,4 +61,5 @@
     <script src="{{asset("assets/js/world-merc.js")}}"></script>
     <script src="{{asset("assets/js/polyfill.js")}}"></script>
     <script src="{{asset("assets/js/main.js")}}"></script>
+    </body>
 </html>
