@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGuruMapelTable extends Migration
+class CreateJurusanUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateGuruMapelTable extends Migration
      */
     public function up()
     {
-        Schema::create('guru_mapel', function (Blueprint $table) {
-            $table->id();
-            $table->foreign('guru_id')->references('id')->on('guru');
-            $table->foreign('mapel_id')->references('id')->on('mapel');
-            $table->timestamps();
+        Schema::create('jurusan_user', function (Blueprint $table) {
+            $table->foreignId('jurusan_id')->constrained('jurusans');
+            $table->foreignId('user_id')->constrained('users');
+            $table->primary(['jurusan_id','user_id']);
         });
     }
 
@@ -28,6 +27,6 @@ class CreateGuruMapelTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guru_mapel');
+        Schema::dropIfExists('jurusan_user');
     }
 }

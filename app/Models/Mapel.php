@@ -7,7 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mapel extends Model
 {
-    public function Guru(){
-        return $this->belongsToMany(Guru::class,'guru_mapel');
-    }
+    
 }

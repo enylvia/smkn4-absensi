@@ -12,4 +12,7 @@ class Jurusan extends Model
     public function Siswa() { 
         return $this->hasMany(Siswa::class);
     }
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }

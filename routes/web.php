@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
+    return view('auth.login');
+});
+Route::get('/listguru', function () {
     return view('guru.listguru');
 });
-Auth::routes();
-
+Route::get('/addguru',[GuruController::class,'createview'])->name('addguru');
 Route::get('/listsiswa',[SiswaController::class,'index'])->name('listsiswa');
 Route::get('/overview/attendance',[AttendanceController::class,'overview'])->name('overview');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+Route::post('/storeuser',[GuruController::class,'store'])->name('storeuser');

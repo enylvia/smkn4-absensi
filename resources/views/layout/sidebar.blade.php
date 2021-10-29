@@ -172,10 +172,10 @@
           </a>
           <ul id="ddmenu_3" class="collapse dropdown-nav">
             <li>
-              <a href="signin.html"> Sign In </a>
+              <a href="{{route('addguru')}}"> Tambahkan User </a>
             </li>
             <li>
-              <a href="signup.html"> Sign Up </a>
+              <a href=""> List User </a>
             </li>
           </ul>
         </li>
