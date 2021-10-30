@@ -26,7 +26,7 @@ Route::get('/listguru', function () {
 });
 Route::get('/addguru',[GuruController::class,'createview'])->name('addguru');
 Route::get('/listsiswa',[SiswaController::class,'index'])->name('listsiswa');
-Route::get('/overview/attendance',[AttendanceController::class,'overview'])->name('overview');
+Route::get('/overview/attendance/{id}',[AttendanceController::class,'overview'])->name('overview');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::post('/storeuser',[GuruController::class,'store'])->name('storeuser');

@@ -141,7 +141,7 @@
           </a>
           <ul id="ddmenu_2" class="collapse dropdown-nav">
             <li>
-              <a href="{{route('overview')}}">Absen Siswa</a>
+              <a href="{{route('overview',Auth::user()->id)}}">Absen Siswa</a>
             </li>
           </ul>
         </li>

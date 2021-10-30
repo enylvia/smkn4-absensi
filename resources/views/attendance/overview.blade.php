@@ -9,33 +9,17 @@
             <div class="card-style">
                 <div class="row">
                         {{-- loop here --}}
-                        <div class="col-md-4 text-center">
+                        @foreach ($kelas as $item)
+                        <div class="col-md-3 text-center py-3">
                             <a href="" class="">
-                                <div class="card py-5 px-5 text-center bg-success">
+                                <div class="card py-5 px-5 text-center bg-success" style="width: 200px">
                                     <p class="text-white">
-                                        Jurusan A
+                                       {{$item->tingkatan}} {{$item->kelas}} {{$item->sub}}
                                     </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a href="" class="">
-                            <div class="card py-5 px-5 text-center bg-success">
-                                <p class="text-white">
-                                    Jurusan A
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <a href="" class="">
-                            <div class="card py-5 px-5 text-center bg-success">
-                                <p class="text-white">
-                                    Jurusan A
-                                </p>
-                            </div>
-                        </a>
-                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
                     {{-- end loop here --}}
                 </div>
             </div>
