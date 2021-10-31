@@ -11,7 +11,7 @@
                         {{-- loop here --}}
                         @foreach ($kelas as $item)
                         <div class="col-md-3 text-center py-3">
-                            <a href="" class="">
+                            <a href="{{route('attendance',$item->id)}}" class="">
                                 <div class="card py-5 px-5 text-center bg-success" style="width: 200px">
                                     <p class="text-white">
                                        {{$item->tingkatan}} {{$item->kelas}} {{$item->sub}}
