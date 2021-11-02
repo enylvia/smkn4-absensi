@@ -52,7 +52,7 @@
                                             <label class="form-check-label" for="inlineCheckbox1">Hadir</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="{{$data->id}}+1" name="sakit[]">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="{{$data->id}}" name="sakit[]">
                                             <label class="form-check-label" for="inlineCheckbox2">Sakit</label>
                                         </div><div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="{{$data->id}}+1" name="izin[]">

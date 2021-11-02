@@ -7,6 +7,8 @@
         <span class="divider"></span>
         <div class="row">
             <div class="card-style">
+                <h5 class="text-center">PILIH KELAS MENGAJAR</h5>
+                <hr>
                 <div class="row">
                         {{-- loop here --}}
                         @foreach ($kelas as $item)

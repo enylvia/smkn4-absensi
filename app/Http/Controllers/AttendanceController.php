@@ -19,9 +19,16 @@ class AttendanceController extends Controller
         return view ('attendance.listsiswa')->with('siswa',$siswa);
     }
 
+    //store attendance to user total
     public function storeattendance(Request $request){
+        
 
+        //mapping data to variable
         $hadir = $request->hadir;
+        $sakit = $request->sakit;
+        $izin = $request->izin;
+        $alpa = $request->alpa;
+        // dd($sakit);
 
         if ($hadir){
             foreach ($hadir as $data ) {
@@ -30,6 +37,27 @@ class AttendanceController extends Controller
                 $users->save();
             }
         }
-        // dd($hadir);
+        if($sakit){
+            foreach ($sakit as $data ) {
+                $users = Siswa::find($data);
+                $users->sakit +=1;
+                $users->save();
+            }
+    }
+        if($izin){
+            foreach ($izin as $data ) {
+                $users = Siswa::find($data);
+                $users->izin +=1;
+                $users->save();
+            }
+        }
+        if($alpa){
+            foreach ($alpa as $data ) {
+                $users = Siswa::find($data);
+                $users->alpa +=1;
+                $users->save();
+            }
+        }
+
     }
 }
