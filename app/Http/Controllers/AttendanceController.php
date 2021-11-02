@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Siswa;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AttendanceController extends Controller
@@ -15,8 +16,11 @@ class AttendanceController extends Controller
     }
 
     public function attend($id){
+        $user_id =  Auth::user()->id;
+        $user = User::findorFail($user_id);
+        $mapel = $user->mapels()->orderBy('mapel','asc')->get();
         $siswa = Siswa::Where('jurusan_id',$id)->get();
-        return view ('attendance.listsiswa')->with('siswa',$siswa);
+        return view ('attendance.listsiswa')->with(['siswa'=>$siswa,'mapel'=>$mapel]);
     }
 
     //store attendance to user total

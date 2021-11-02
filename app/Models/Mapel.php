@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mapel extends Model
 {
+    protected $fillable = [
+        'mapel'
+    ];
     
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }

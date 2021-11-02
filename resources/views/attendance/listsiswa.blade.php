@@ -17,9 +17,9 @@
                                         <div class="form-group">
                                             <label for="mapel">Silahkan Pilih Mata Pelajaran</label>
                                             <select name="mapel_id" id="mapel" class="form-control">
-                                                <option value="1">Bind</option>
-                                                <option value="2">MTK</option>
-                                                <option value="3">IPA</option>
+                                                @foreach ($mapel as $item)
+                                                    <option value="{{$item->id}}">{{$item->mapel}}</option>
+                                                @endforeach
                                             </select>
                                         </div>                        
                                     </div>
@@ -48,19 +48,19 @@
                                     <td class="min-width">{{ $data->nama }}</td>
                                     <td class="min-width text-center">
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{$data->id}}" name="hadir[]">
-                                            <label class="form-check-label" for="inlineCheckbox1">Hadir</label>
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox{{$data->id}}" value="{{$data->id}}" name="hadir[]">
+                                            <label class="form-check-label" for="inlineCheckbox{{$data->id}}">Hadir</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="{{$data->id}}" name="sakit[]">
-                                            <label class="form-check-label" for="inlineCheckbox2">Sakit</label>
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbo{{$data->id}}" value="{{$data->id}}" name="sakit[]">
+                                            <label class="form-check-label" for="inlineCheckbo{{$data->id}}">Sakit</label>
                                         </div><div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="{{$data->id}}+1" name="izin[]">
-                                            <label class="form-check-label" for="inlineCheckbox3">Izin</label>
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckb{{$data->id}}" value="{{$data->id}}" name="izin[]">
+                                            <label class="form-check-label" for="inlineCheckb{{$data->id}}">Izin</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="{{$data->id}}+1" name="alpa[]">
-                                            <label class="form-check-label" for="inlineCheckbox4">Alpa</label>
+                                            <input class="form-check-input" type="checkbox" id="inlineCheck{{$data->id}}" value="{{$data->id}}" name="alpa[]">
+                                            <label class="form-check-label" for="inlineCheck{{$data->id}}">Alpa</label>
                                         </div>
                                     </td>
                                 </tr>
