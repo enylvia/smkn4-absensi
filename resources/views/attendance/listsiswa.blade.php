@@ -42,8 +42,10 @@
                                     @endphp
                                 @foreach($siswa as $key => $data)
                                 <tr>
+                                    <input type="text" name="guru_id" value="{{Auth::user()->id}}" hidden>
+                                    <input type="text" name="jurusan_id" value="{{$data->jurusan_id}}" hidden>
+                                    <input type="text" name="siswa_id[]" value="{{$data->id}}" hidden>
                                     <td class="min-width">{{ $no++}}</td>
-                                    <input type="text" name="id_guru" value="{{Auth::user()->id}}" hidden>
                                     <td class="min-width">{{ $data->nipd }}</td>
                                     <td class="min-width">{{ $data->nama }}</td>
                                     <td class="min-width text-center">

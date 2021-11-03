@@ -52,4 +52,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Mapel::class);
     }
+    public function Attendances() { 
+        return $this->hasMany(Attendance::class);
+    }
 }

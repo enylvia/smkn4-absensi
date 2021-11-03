@@ -12,4 +12,7 @@ class Siswa extends Model
     public function Jurusan(){
         return $this->belongsTo(Jurusan::class);
     }
+    public function Attendances() { 
+        return $this->hasMany(Attendance::class);
+    }
 }

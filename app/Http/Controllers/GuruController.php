@@ -18,7 +18,7 @@ class GuruController extends Controller
     public function store(Request $request){
         $attr = $request->all();
 
-        // dd(Request('mapel'));
+        // dd($attr);
         $attr['password'] = bcrypt(request('password'));
         $guru = User::create($attr);
 
