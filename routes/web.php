@@ -3,6 +3,7 @@
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,10 +26,14 @@ Route::get('/', function () {
 });
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
+
+// Home Controller & Error Handling
+Route::get('/dashboard',[HomeController::class,'dashboard'])->name('home');
+Route::get('/404',[HomeController::class,'error'])->name('404');
+Route::get('/503',[HomeController::class,'badreq'])->name('503');
+
 // Guru Controller untuk semua fitur yang berhubungan dengan registrasi guru
-Route::get('/listguru', function () {
-    return view('guru.listguru');
-});
+Route::get('/listguru',[GuruController::class,'listguru'])->name('listguru');
 Route::get('/addguru',[GuruController::class,'createview'])->name('addguru');
 Route::post('/storeuser',[GuruController::class,'store'])->name('storeuser');
 

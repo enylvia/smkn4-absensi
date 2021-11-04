@@ -26,8 +26,11 @@ class AttendanceController extends Controller
 
     //store attendance to user total
     public function storeattendance(Request $request){
-        
-        //mapping data to variable
+
+        try {
+            //code...
+
+            //mapping data to variable
         $hadir = $request->hadir;
         $sakit = $request->sakit;
         $izin = $request->izin;
@@ -97,7 +100,13 @@ class AttendanceController extends Controller
             }
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data absensi berhasil disimpan.');
+        } catch (\Throwable $th) {
+            //throw $th;
+            return redirect()->route('503');
+        }
+        
+        
 
     }
 }

@@ -50,7 +50,7 @@ class LoginController extends Controller
 
         if(auth()->attempt(array('email' => $input['email'],'password' => $input['password'])))
         {
-           return view('guru.listguru');
+           return redirect()->route('home');
         }else {
             return view('auth.login');
         }

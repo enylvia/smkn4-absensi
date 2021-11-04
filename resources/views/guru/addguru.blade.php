@@ -14,20 +14,29 @@
                         @csrf
                         <div class="form-group">
                             <label class="py-2">Nama</label>
-                            <input type="nama" class="form-control" placeholder="Masukan nama user" name="name" />
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Masukan nama user" name="name" />
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="py-2">E-mail</label>
-                            <input type="email" class="form-control" placeholder="user@mail.com" name="email" />
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="user@mail.com" name="email" />
+                            @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="py-2">Kata Sandi</label>
-                            <input type="password" class="form-control" name="password" />
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" />
                             <small class="fst-italic">&middot; Must contains character&number</small>
+                            @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="role" class="py-2">Role</label>
-                            <select name="role" id="role" class="form-control">
+                            <select name="role" id="role" class="form-control" required>
                                 <option value="guru">Guru</option>
                                 <option value="walikelas">Wali Kelas</option>
                             </select>

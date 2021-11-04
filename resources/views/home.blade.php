@@ -1,23 +1,16 @@
-@extends('layouts.app')
+@extends('layout.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+<div class="container-fluid">
+    <div class="content mt-3">
+        <div class="card-style">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Optio tempore ullam quae sapiente praesentium doloribus tenetur ipsam minima illum exercitationem est impedit repellat itaque rem labore, 
+                eveniet accusantium suscipit recusandae.
+            </p>
         </div>
     </div>
 </div>
+    
 @endsection

@@ -22,4 +22,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+     public function dashboard(){
+        return view('home');
+     }
+     public function error(){
+         return view('error.404notfound');
+     }
+     public function badreq(){
+         return view('error.503BadRequest');
+     }
 }

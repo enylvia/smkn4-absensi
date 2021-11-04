@@ -8,7 +8,7 @@
     <nav class="sidebar-nav">
       <ul>
         <li class="nav-item">
-          <a href="/">
+          <a href="{{route('home')}}">
             <span class="icon">
               <svg width="22" height="22" viewBox="0 0 22 22">
                 <path
@@ -87,7 +87,7 @@
           </a>
           <ul id="ddmenu_1" class="collapse dropdown-nav">
             <li>
-              <a href="settings.html">Daftar Guru</a>
+              <a href="{{route('listguru')}}">Daftar Guru</a>
             </li>
             <li>
               <a href="blank-page.html">Update Data Guru</a>
